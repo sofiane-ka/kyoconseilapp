@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:kyoconseilapp/NavBar.dart';
-import 'ChatMessageWidget.dart';
+import 'chatMessageWidget.dart';
 
 const backgroundColor = Color(0xffffffff);
 const iconColor = Color(0xff09080);

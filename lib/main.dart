@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           width: 250.0,
           fit: BoxFit.fill,
         ),
-        nextScreen: HomePage(),
+        nextScreen: const HomePage(),
         splashIconSize: 220,
         duration: 3000,
         animationDuration: const Duration(milliseconds: 1500),
