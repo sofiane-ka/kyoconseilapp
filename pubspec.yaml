@@ -39,6 +39,7 @@ dependencies:
   page_transition: ^2.0.9
   speech_to_text: ^6.1.1
   flutter_tts: ^3.3.3
+  grouped_list: ^5.1.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

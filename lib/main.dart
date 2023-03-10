@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         nextScreen: const HomePage(),
         splashIconSize: 220,
-        duration: 3000,
+        duration: 500,
         animationDuration: const Duration(milliseconds: 1500),
         splashTransition: SplashTransition.fadeTransition,
         pageTransitionType: PageTransitionType.topToBottom,
