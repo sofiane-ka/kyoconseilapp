@@ -75,9 +75,8 @@ flutter:
   fonts:
     - family: Nunito
       fonts:
-        - asset: fonts/Nunito-Black.ttf
         - asset: fonts/Nunito-Bold.ttf
-          weight: 700
+          weight: 900
 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
