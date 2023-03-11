@@ -42,7 +42,13 @@ class _ContactUsState extends State<ContactUs> {
               title: Image.asset(
                 'assets/icon.png',
               ),
-              actions: [Image.asset('assets/profile.png')],
+              actions: [
+                IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    icon: Image.asset('assets/profile.png'))
+              ],
             ),
             extendBodyBehindAppBar: true,
             backgroundColor: backgroundColor,
@@ -138,7 +144,9 @@ class _ContactUsState extends State<ContactUs> {
                                     border: Border.all(color: redColor),
                                     borderRadius: BorderRadius.circular(12.0)),
                                 child: ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
                                   child: Text('< Go back',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(

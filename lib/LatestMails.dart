@@ -42,7 +42,13 @@ class _LatestMailsState extends State<LatestMails> {
               title: Image.asset(
                 'assets/icon.png',
               ),
-              actions: [Image.asset('assets/profile.png')],
+              actions: [
+                IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    icon: Image.asset('assets/profile.png'))
+              ],
             ),
             extendBodyBehindAppBar: true,
             backgroundColor: backgroundColor,

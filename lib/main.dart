@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kyoconseilapp/GetStarted.dart';
 import 'HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
@@ -20,9 +21,9 @@ class MyApp extends StatelessWidget {
           width: 250.0,
           fit: BoxFit.fill,
         ),
-        nextScreen: const HomePage(),
+        nextScreen: const GetStarted(),
         splashIconSize: 220,
-        duration: 500,
+        duration: 700,
         animationDuration: const Duration(milliseconds: 1500),
         splashTransition: SplashTransition.fadeTransition,
         pageTransitionType: PageTransitionType.topToBottom,

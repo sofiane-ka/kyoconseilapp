@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:kyoconseilapp/ContactUs.dart';
 import 'package:kyoconseilapp/Feedb.dart';
+import 'package:kyoconseilapp/GetStarted.dart';
 import 'package:kyoconseilapp/LatestMails.dart';
 import 'Feedb.dart';
 
@@ -102,7 +103,12 @@ class _NavBarState extends State<NavBar> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12.0)),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => GetStarted()),
+                      );
+                    },
                     child: Text('Logout',
                         textAlign: TextAlign.center,
                         style: TextStyle(

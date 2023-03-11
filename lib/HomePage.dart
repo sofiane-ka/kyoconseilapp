@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:kyoconseilapp/NavBar.dart';
+import 'package:kyoconseilapp/PreviousChat.dart';
 import 'chatMessageWidget.dart';
 import 'LatestMails.dart';
 
@@ -59,7 +60,13 @@ class _HomePageState extends State<HomePage> {
           title: Image.asset(
             'assets/icon.png',
           ),
-          actions: [Image.asset('assets/profile.png')],
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: Image.asset('assets/profile.png'))
+          ],
         ),
         extendBodyBehindAppBar: true,
         backgroundColor: backgroundColor,
@@ -225,8 +232,174 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       const SizedBox(
-                        height: 10.0,
+                        height: 20.0,
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 76,
+                              padding: const EdgeInsets.only(right: 0.0),
+                              decoration: BoxDecoration(
+                                  image: const DecorationImage(
+                                      image: AssetImage(
+                                          'assets/computerImage.jpg'),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(20.0)),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Container(
+                                          height: 76,
+                                          width: 62,
+                                          padding: const EdgeInsets.only(
+                                              right: 12.0),
+                                          decoration: const BoxDecoration(
+                                            color: redColor,
+                                            borderRadius: BorderRadius.only(
+                                                topRight:
+                                                    Radius.circular(100.0),
+                                                bottomRight:
+                                                    Radius.circular(100.0),
+                                                topLeft: Radius.circular(50.0),
+                                                bottomLeft:
+                                                    Radius.circular(50.0)),
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Image.asset('assets/ring.png')
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 0.0),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        MaterialButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const PreviousChat()),
+                                            );
+                                          },
+                                          child: const Text(
+                                            'Compose a mail',
+                                            textAlign: TextAlign.start,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontFamily: 'Nunito',
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          ///
+                          SizedBox(
+                            width: 5.0,
+                          ),
+
+                          ///
+                          ///
+                          Expanded(
+                            child: Container(
+                              height: 76,
+                              padding: const EdgeInsets.only(right: 0.0),
+                              decoration: BoxDecoration(
+                                  image: const DecorationImage(
+                                      image: AssetImage('assets/redImage.jpg'),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(20.0)),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Container(
+                                          height: 76,
+                                          width: 62,
+                                          padding: const EdgeInsets.only(
+                                              right: 12.0),
+                                          decoration: const BoxDecoration(
+                                            color: redColor,
+                                            borderRadius: BorderRadius.only(
+                                                topRight:
+                                                    Radius.circular(100.0),
+                                                bottomRight:
+                                                    Radius.circular(100.0),
+                                                topLeft: Radius.circular(50.0),
+                                                bottomLeft:
+                                                    Radius.circular(50.0)),
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Image.asset('assets/time.png')
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 0.0),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        MaterialButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const PreviousChat()),
+                                            );
+                                          },
+                                          child: const Text(
+                                            'Previous Chat',
+                                            textAlign: TextAlign.start,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontFamily: 'Nunito',
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
