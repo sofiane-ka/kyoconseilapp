@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:kyoconseilapp/NavBar.dart';
+import 'package:kyoconseilapp/SignUp.dart';
 import 'package:kyoconseilapp/welcome.dart';
 import 'chatMessageWidget.dart';
 
@@ -88,7 +89,7 @@ class _GetStartedState extends State<GetStarted> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Welcome()),
+                                      builder: (context) => SignUp()),
                                 );
                               },
                               child: Text('Next',
