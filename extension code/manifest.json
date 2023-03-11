@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "KYO CONSEIL",
+    "description":"extension for replies to mails",
+    "version": "1.0",
+    "background": {
+      "service_worker": "background.js"
+    },
+    "permissions": [
+      "contentSettings", "activeTab",
+      "scripting", "activeTab", "declarativeContent", "tabs"],
+    "content_scripts":[{
+        "js":["content.js"],
+        "matches":[
+            "https://mail.google.com/*"
+        ]
+    }],
+    "action": {
+      "default_icon": "icon.png",
+      "default_title": "KYO CONSEIL",
+      "default_popup": "3popup.html"
+    }
+  
+  }
+  

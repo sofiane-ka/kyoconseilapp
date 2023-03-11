@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/extension code/popup.css">
+    <script src="popup.js">
+
+    function changePopup(){
+        chrome.Action.setPopup({
+            
+        popup:"2popup.html"
+    });
+    
+    }
+    </script>
+    <title>Document</title>
+    <style>
+        body{
+        background-color: #ffffff;
+        color: #000000;
+        width: 252px;
+        height: 335px;
+        
+        }
+        .icon{
+            width: 35px;
+            height: 35px;
+            margin:auto;
+            display: block;
+            margin-top: 20px;
+        }
+        .mic{
+            width: 44px;
+            height: 60px;
+            margin:auto;
+            display: block;
+            
+        }
+        .btn{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin:auto;
+            display: block;
+            margin-top: 30px;
+            background-color: #FF2F56;
+            border-radius: 100%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 4px 4px 11px rgba(0, 0, 0, 0.25);
+            
+
+        }
+        .btn2{
+            width: 205px;
+            height: 33px;
+            margin:auto;
+            display: block;
+            margin-top: 10px;
+            background-color: #FF2F56;
+            border-radius: 14px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: #ffffff;
+            font-size: 14px;
+        }
+        .fusil{
+            position: absolute;
+            left: 0%;
+            
+            
+        }
+        .shadow{
+            position: absolute;
+            margin-top: -100px;
+            margin-left: 130px;
+        }
+        </style>
+</head>
+<body>
+    
+    <img class="fusil" src="fusil.png" alt="">
+    <img class="icon" src="Icon.png" alt="">
+   
+    <h1 style="text-align: center;">tap to talk !</h1>
+    <button class="btn" > <img class="mic" src="mic.png" > </button>
+    <img class="shadow" src="shadow.png" alt="">
+    <p style="text-align: center;">or just : </p>
+    <button onclick="changePopup()" class="btn2" >Type here to ask manually</button>
+
+    <a href="https://www.facebook.com" target="_blank" >"web_accessable_resources"</a>
+    
+
+</body>
+</html>
