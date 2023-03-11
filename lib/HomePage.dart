@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kyoconseilapp/NavBar.dart';
 import 'package:kyoconseilapp/PreviousChat.dart';
 import 'chatMessageWidget.dart';
-import 'LatestMails.dart';
+import 'latest_mails.dart';
 
 const backgroundColor = Color(0xffffffff);
 const iconColor = Color(0xff09080);

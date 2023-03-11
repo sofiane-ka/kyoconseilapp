@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:kyoconseilapp/NavBar.dart';
-import 'chatMessageWidget.dart';
 
 const backgroundColor = Color(0xffffffff);
 const iconColor = Color(0xff09080);
 const redColor = Color(0xffFF2D56);
 const grayColor = Color(0xffF3F3F3);
 
-class PreviousChat extends StatefulWidget {
-  const PreviousChat({super.key});
+class LatestMails extends StatefulWidget {
+  const LatestMails({super.key});
 
   @override
-  State<PreviousChat> createState() => _PreviousChatState();
+  State<LatestMails> createState() => _LatestMailsState();
 }
 
-class _PreviousChatState extends State<PreviousChat> {
+class _LatestMailsState extends State<LatestMails> {
   final _textController = TextEditingController();
   final _scrollController = ScrollController();
 
@@ -31,14 +28,16 @@ class _PreviousChatState extends State<PreviousChat> {
           centerTitle: true,
           elevation: 0.0,
           leading: Builder(
-              builder: (context) => IconButton(
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                  icon: const Icon(
-                    Icons.menu,
-                    color: Colors.black,
-                  ))),
+            builder: (context) => IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+            ),
+          ),
           title: Image.asset(
             'assets/icon.png',
           ),
@@ -102,13 +101,15 @@ class _PreviousChatState extends State<PreviousChat> {
                     width: double.infinity,
                     child: Row(
                       children: const [
-                        Text('Check Previous chats : ',
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Nunito',
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold)),
+                        Text(
+                          'Latest mails',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: 'Nunito',
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ],
                     ),
                   ),
@@ -120,7 +121,7 @@ class _PreviousChatState extends State<PreviousChat> {
                       height: double.infinity,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: redColor,
+                        color: grayColor,
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: ListView.separated(
@@ -132,11 +133,7 @@ class _PreviousChatState extends State<PreviousChat> {
                         shrinkWrap: true,
                         itemCount: 6,
                         itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(
-                                right: 20, left: 20, top: 30),
-                            child: previousChatItem(),
-                          );
+                          return latestEmailItem();
                         },
                       ),
                     ),
@@ -150,9 +147,9 @@ class _PreviousChatState extends State<PreviousChat> {
     );
   }
 
-  Widget previousChatItem() {
+  Widget latestEmailItem() {
     return Container(
-      height: 91,
+      height: 113,
       padding: const EdgeInsets.only(
         right: 40.0,
       ),
@@ -166,11 +163,11 @@ class _PreviousChatState extends State<PreviousChat> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
-                  height: 91,
+                  height: 113,
                   width: 62,
                   padding: const EdgeInsets.only(right: 12.0),
                   decoration: const BoxDecoration(
-                    color: Color(0xffF3F3F3),
+                    color: redColor,
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(100.0),
                         bottomRight: Radius.circular(100.0),
@@ -179,7 +176,7 @@ class _PreviousChatState extends State<PreviousChat> {
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [Image.asset('assets/clock.png')],
+                    children: [Image.asset('assets/mail.png')],
                   ),
                 ),
               ],
@@ -194,12 +191,12 @@ class _PreviousChatState extends State<PreviousChat> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 10, top: 6),
+              padding: const EdgeInsets.only(bottom: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Quest About ...',
+                    'Mail Object',
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         color: Colors.black,
@@ -207,27 +204,50 @@ class _PreviousChatState extends State<PreviousChat> {
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
-                  // const SizedBox(
-                  //   height: 6,
-                  // ),
-                  const Text(
-                    'AI generated response ...',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Nunito',
-                        fontSize: 12.8,
-                        fontWeight: FontWeight.normal),
+                  const Flexible(
+                    child: Text(
+                      'the beggining of the mail , first lines of the original mail ...',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: 'Nunito',
+                          fontSize: 12.8,
+                          fontWeight: FontWeight.normal),
+                    ),
                   ),
                   const Spacer(),
                   Row(
-                    children: [
-                      Image.asset(
-                        'assets/time.png',
-                        width: 20,
-                        height: 20,
+                    children: const [
+                      Icon(
+                        Icons.person_outline,
                       ),
-                      const Text(
+                      Text(
+                        'from who',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Nunito',
+                            fontSize: 8.19,
+                            fontWeight: FontWeight.normal),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.speaker,
+                      ),
+                      Text(
+                        'Promotion',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: 'Nunito',
+                            fontSize: 8.19,
+                            fontWeight: FontWeight.normal),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.lock_clock,
+                      ),
+                      Text(
                         '10:45',
                         textAlign: TextAlign.start,
                         style: TextStyle(
@@ -236,30 +256,7 @@ class _PreviousChatState extends State<PreviousChat> {
                             fontSize: 8.19,
                             fontWeight: FontWeight.normal),
                       ),
-                      const Spacer(),
-                      const Icon(
-                        Icons.calendar_month,
-                      ),
-                      const Text(
-                        '20/20/2020',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'Nunito',
-                            fontSize: 8.19,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      const Spacer(),
-                      const Text(
-                        'see more',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'Nunito',
-                            fontSize: 8.19,
-                            fontWeight: FontWeight.normal),
-                      ),
-                      const Spacer(),
+                      Spacer(),
                     ],
                   )
                 ],

@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:kyoconseilapp/ContactUs.dart';
 import 'package:kyoconseilapp/Feedb.dart';
 import 'package:kyoconseilapp/GetStarted.dart';
-import 'package:kyoconseilapp/LatestMails.dart';
+import 'package:kyoconseilapp/latest_mails.dart';
 import 'Feedb.dart';
 
 import 'package:kyoconseilapp/HomePage.dart';
