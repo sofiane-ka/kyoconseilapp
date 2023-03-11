@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kyoconseilapp/GetStarted.dart';
+import 'package:kyoconseilapp/authentication/signup.dart';
 import 'HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           width: 250.0,
           fit: BoxFit.fill,
         ),
-        nextScreen: const GetStarted(),
+        nextScreen: const SignInPage(),
         splashIconSize: 220,
         duration: 700,
         animationDuration: const Duration(milliseconds: 1500),

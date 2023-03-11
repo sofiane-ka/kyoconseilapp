@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:kyoconseilapp/NavBar.dart';
 import 'package:kyoconseilapp/PreviousChat.dart';
 import 'chatMessageWidget.dart';
@@ -113,22 +111,23 @@ class _HomePageState extends State<HomePage> {
                         height: 15.0,
                       ),
                       //the mic is here
-                      Container(
-                          height: 150,
-                          width: 150,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                showOverlay = true;
-                              });
-                            },
-                            child: Image.asset('assets/mic.png'),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: redColor,
-                              shape: CircleBorder(),
-                              padding: EdgeInsets.all(24),
-                            ),
-                          )),
+                      SizedBox(
+                        height: 150,
+                        width: 150,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              showOverlay = true;
+                            });
+                          },
+                          child: Image.asset('assets/mic.png'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: redColor,
+                            shape: CircleBorder(),
+                            padding: EdgeInsets.all(24),
+                          ),
+                        ),
+                      ),
                       const SizedBox(height: 10.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -406,18 +405,21 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             if (showOverlay)
-              GestureDetector(
-                onTap: _hideChatMessageWidget,
-                child: Container(
-                  color: Colors.black.withOpacity(0.5),
+              Positioned.fill(
+                child: Center(
+                  child: Container(
+                    // color: Colors.white,
+                    child: ChatMessageWidget(),
+                  ),
                 ),
               ),
             if (showOverlay)
-              Positioned.fill(
-                child: Center(
-                  child: ChatMessageWidget(),
-                ),
-              ),
+              GestureDetector(
+                  // onTap: _hideChatMessageWidget,
+                  // child: Container(
+                  //   color: Colors.black.withOpacity(0.5),
+                  // ),
+                  ),
           ],
         ),
       ),
